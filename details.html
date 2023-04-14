@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Détails</title>
+    <style>
+      /* styles pour la mise en page de la page de détails */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        font-size: 32px;
+        margin-top: 0;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      iframe {
+        width: 100%;
+        height: 500px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="details-container">
+     
+    </div>
+    <script>
+    function getDetails(id) {
+        const detailsContainer = document.querySelector('.details-container')
+        let params = new URL(document.location).searchParams
+         idMovie = params.get("id")
+        // Récupération des détails avec l'API de TMBD
+        fetch(`https://api.themoviedb.org/3/movie/${idMovie}?api_key=81e1b94cd27c6a6afba6ebacbb80d97e&language=fr-FR`)
+        .then(response => response.json())
+        .then(data => {
+            // Affichage des détails dans le conteneur correspondant
+            detailsContainer.innerHTML = `
+                <h2>${data.title || data.name}</h2>
+                <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}">
+                <p><strong>Genres :</strong> ${data.genres.map(genre => genre.name).join(', ')}</p>
+                <p><strong>Durée :</strong> ${data.runtime || data.episode_run_time[0]} minutes</p>  
+                
+            `
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
+    getDetails()
+
+    </script>
+  </body>
+</html>

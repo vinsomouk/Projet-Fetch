@@ -34,10 +34,47 @@
 					<span></span>
 				</span>
 			</a>
-			<h1 class="titre">Projet Films </h1>
+			<div class="div">
+				<h1 class="titre">Projet Films </h1>
+			</div>
+			
 		</div>
 	</header>
     
+	
+		<div class="container">
+			<h1>Recherche de films et séries</h1>
+			<div class="search-box">
+			  <input type="text" id="search-input" placeholder="Recherchez un film ou une série" />
+			  <select id="media-type-select">
+				  <option value="movie">Films</option>
+				  <option value="tv">Séries TV</option>
+				  <option value="multi">Tous</option>
+				</select>
+			  <button id="search-btn">Rechercher</button>
+			</div>
+			<div class="result-container"></div>
+			<div class="pagination">
+			  <button id="prev-btn" disabled>Précédent</button>
+			  <div class="page-info"></div>
+			  <button id="next-btn">Suivant</button>
+			</div>
+			<div class="results-per-page">
+			  <label for="results-per-page-select">Afficher</label>
+			  <select id="results-per-page-select">
+				<option value="10" selected>10</option>
+				<option value="20">20</option>
+				<option value="50">50</option>
+			  </select>
+			  <label for="results-per-page-select">résultats par page</label>
+			</div>
+		  </div >
+		  <select id="sort-select">
+			  <option value="release_date">Date de sortie</option>
+			  <option value="popularity">Popularité</option>
+			  <option value="vote_average">Note moyenne</option>
+			</select>
+	
 
 
 
