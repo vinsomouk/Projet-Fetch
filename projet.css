@@ -1,0 +1,98 @@
+h1
+{
+	font-family: 'Righteous', cursive;
+    
+}
+
+a
+{
+	font-family: 'Righteous', cursive;
+}
+
+body{
+	margin: 0;
+	background-color: gold;
+	color: black;
+}
+
+.header
+{
+	background-color: rgb(0, 0, 0);
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+	grid-template-rows: auto;
+    width: 100%;
+    color: white;
+	text-align: center;
+}
+
+.titre
+{
+	grid-column: 6 /span 1;
+	grid-row: 1;
+    margin: 0;
+	width: 100%;
+}
+
+.sidenav
+{
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: -250px;
+	background-color: #000000;
+	padding-top: 60px;
+	transition: left 0.5s ease;
+	grid-column: 1 /span 1;
+	grid-row: 1;
+}
+
+/* Sidenav menu links */
+.sidenav a
+{
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #ffffff;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav a:hover
+{
+	color: #ff0000;
+}
+
+.sidenav ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+/* Active class */
+.sidenav.active
+{
+	left: 0;
+}
+
+/* Close btn */
+.sidenav .close
+{
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon span
+{
+	display: block;
+	width: 35px;
+	height: 5px;
+	background-color: rgb(255, 255, 255);
+	margin: 6px 0;
+}
